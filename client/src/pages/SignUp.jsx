@@ -3,7 +3,6 @@ import {Link,useNavigate} from 'react-router-dom'
 
 const SignUp = () => {
   
-
   const [formData,setFormData]  = useState({})
   const [error,setError] = useState(null);
   const [loading,setLoading] = useState(false);
