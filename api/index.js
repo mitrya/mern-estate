@@ -6,12 +6,19 @@ import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.route.js'
 
 dotenv.config();
-
-mongoose.connect(process.env.MONGO).then(()=>{
-    console.log('connected to mongo')
-}).catch((err)=>{
-    console.log(err)
-})
+const run = async () => {
+    await mongoose.connect(process.env.MONGO);
+    console.log("Connected to myDB");
+  }
+  
+  run()
+  .catch((err) => console.error(err))
+  
+// mongoose.connect(process.env.MONGO).then(()=>{
+//     console.log('connected to mongo')
+// }).catch((err)=>{
+//     console.log(err)
+// })
 
 const app = express();
 
